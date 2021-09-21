@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 1 - Alcudia</title>
+</head>
+<body>
+    <input id="InputText" type="text">
+    <button id="ActionButton">Click me!</button>
+    <script>
+        var inputText = document.getElementById('InputText')
+        const actionButton = document.getElementById('ActionButton')
+
+        actionButton.onclick = () => {
+            print(inputText.value)
+        }
+
+        function print(value) {
+            if (value.length > 0) {
+            console.log(value)
+            count(value)
+            getArticle(value)    
+            } else {
+                alert("Empty input")
+            }
+        }
+
+        var count = function (value) {
+            let sum = 0
+            for (var i = 0; i < value.length; i++) {
+                if(value[i] === 'a') {
+                    sum += 1;
+                }
+            }
+            console.log(sum);
+         };
+
+        var getArticle = value => {
+            const firstLetter = value[0]
+            const vocals = 'aeiouAEIOU'
+            if (vocals.indexOf(firstLetter) >= 0) {
+                console.log('an');
+            } else {
+                console.log('a');
+            }
+        }
+    </script>
+</body>
+</html>
