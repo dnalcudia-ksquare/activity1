@@ -19,23 +19,21 @@
 
         function print(value) {
             if (value.length > 0) {
-            console.log(value)
-            count(value)
+            console.log(value);
+            (function (value) {
+                    let sum = 0
+                    for (var i = 0; i < value.length; i++) {
+                        if (value[i] === 'a') {
+                            sum += 1;
+                        }
+                    }
+                    console.log(sum);
+            })(value);
             getArticle(value)    
             } else {
                 alert("Empty input")
             }
         }
-
-        var count = function (value) {
-            let sum = 0
-            for (var i = 0; i < value.length; i++) {
-                if(value[i] === 'a') {
-                    sum += 1;
-                }
-            }
-            console.log(sum);
-         };
 
         var getArticle = value => {
             const firstLetter = value[0]
